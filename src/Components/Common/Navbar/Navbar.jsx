@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import Logo from '../../../assets/img/logo-nexthouse.svg';
+import { Logo } from '../../../StyledComponents';
+
 import IconCall from '../../../assets/img/icone-call.svg';
 
 const NextHouseNavbar = styled.div`
@@ -109,12 +110,21 @@ const StyledMenuButton = styled.div`
     align-items: flex-end;
     margin-right: 10px;
 
+    &:hover span:first-child{
+      width: 37%;
+    }
+
+    &:hover span:last-child{
+      width: 100%;
+    }
+
     span {
       width: 100%;
       height: 4px;
       background-color: #356460;
       display: block;
       border-radius: 50px;
+      transition: all .2s ease-in-out;
     }
 
     span:not(:first-child){
@@ -131,41 +141,32 @@ const StyledMenuButton = styled.div`
   }
 `;
 
-const Navbar = () => (
-  <NextHouseNavbar>
-    <NextHouseNav>
-      <StyledMenuButton>
-        <div className="menu-button--icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <p>menu</p>
-      </StyledMenuButton>
+const Navbar = (props) => {
+  return(
+      <NextHouseNavbar>
+        <NextHouseNav>
+          <StyledMenuButton onClick={props.onClick} className="menu-button">
+            <div className="menu-button--icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <p>menu</p>
+          </StyledMenuButton>
 
-      <div className="navbar-logo-centered">
-        <div className="logo">
-          <img src={Logo} alt="next house logo" />
-        </div>
-        <div className="logo-bottom-shapes">
-          <div className="boottomer"></div>
-          <div className="triangleers">
-            <div></div>
-            <div></div>
+          <Logo />
+
+          <div className="contactus">
+            <a href="#">
+              <p>
+                <img src={IconCall} alt="contact us icon" />
+                <span>contactez nous</span>
+              </p>
+             </a>
           </div>
-        </div>
-      </div>
-
-      <div className="contactus">
-        <a href="#">
-          <p>
-            <img src={IconCall} alt="contact us icon" />
-            <span>contactez nous</span>
-          </p>
-        </a>
-      </div>
-    </NextHouseNav>
-  </NextHouseNavbar>
-);
+        </NextHouseNav>
+      </NextHouseNavbar>
+  );
+};
 
 export default Navbar;

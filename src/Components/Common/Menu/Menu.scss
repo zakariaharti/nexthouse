@@ -1,0 +1,33 @@
+.menu-anime-enter {
+  transform: translateY(-120px);
+}
+.menu-anime-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: transform 300ms;
+}
+.menu-anime-exit {
+  opacity: 1;
+}
+.menu-anime-exit-active {
+  opacity: 0;
+  transform: translateY(-1440px);
+  transition: transform 300ms;
+}
+
+.menu-anime-out-enter {
+  transform: translateY(-520px);
+}
+.menu-anime-out-enter-active {
+  opacity: 1;
+  transform: translateY(-1440px);
+  transition: transform 300ms;
+}
+.menu-anime-out-exit {
+  opacity: 1;
+}
+.menu-anime-out-exit-active {
+  opacity: 0;
+  transform: translateY(-1440px);
+  transition: transform 300ms;
+}
