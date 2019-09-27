@@ -15,6 +15,11 @@ const NextHouseNav = styled.nav`
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 1000px){
+    flex-direction: column;
+    align-items: center;
+  }
+
   .navbar-logo-centered{
     background-color: #356360;
     cursor: pointer;
@@ -70,6 +75,10 @@ const NextHouseNav = styled.nav`
   .contactus{
     padding: 26px 0;
 
+    @media (max-width: 1300px){
+      display: none;
+    }
+
     a {
 	    color: #356460;
 	    font-family: "Kanit Medium";
@@ -92,6 +101,15 @@ const StyledMenuButton = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: 1300px){
+    order: 2;
+  }
+
+  @media (max-width: 1000px){
+    order: 1;
+    margin: 30px 0;
+  }
 
   p {
 	  color: #356460;

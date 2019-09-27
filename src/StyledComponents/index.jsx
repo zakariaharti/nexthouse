@@ -11,6 +11,14 @@ const StyledLogo = styled.nav`
     float: ${props => props.isMenu && 'left'};
     margin-left: ${props => props.isMenu && '300px'};
 
+    @media (max-width: 1300px){
+      order: 1;
+    }
+
+    @media (max-width: 1000px){
+      order: 2;
+    }
+
     .logo {
        padding: 10px 49px;
     }

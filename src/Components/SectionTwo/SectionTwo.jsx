@@ -52,6 +52,15 @@ const StyledColsWrapper = styled.div`
   a{
     cursor: pointer;
     display: block;
+    transition: .5s;
+
+    &:hover .img{
+      box-shadow: 0px 8px 20px #bdbdbd;
+    }
+  }
+
+  img{
+    transition: .5s;
   }
 
   .col{
@@ -138,6 +147,12 @@ const StyledPresseWrapper = styled.div`
       text-align: center;
       margin: 0 22px;
       cursor: pointer;
+      transition: .5s;
+
+      &:hover{
+        box-shadow: 0px 4px 10px #b5b5b55c;
+        background: #cc9d3a26;
+      }
 
       .arrow{
         position: relative;
@@ -323,7 +338,7 @@ const SectionTwo = () => {
        <StyledColsWrapper>
           <div className="col">
             <a>
-              <img src={Appart} alt='Appartement' />
+              <img className="img" src={Appart} alt='Appartement' />
               <div className="content">
                 <div className="text">
                   <h4>Appartements</h4>
@@ -337,7 +352,7 @@ const SectionTwo = () => {
           </div>
           <div>
             <a>
-              <img src={Villa} alt='Villa' />
+              <img className="img" src={Villa} alt='Villa' />
               <div className="content">
                 <div className="text">
                   <h4>Villa</h4>

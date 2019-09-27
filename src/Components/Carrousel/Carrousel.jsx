@@ -26,6 +26,11 @@ const CarrouselWrapper = styled.div`
     line-height: 50px;
     text-align: center;
     padding: 0 279px;
+
+    @media (max-width: 1459px) {
+      padding: 0;
+      margin-bottom: 60px;
+    }
   }
 `;
 
@@ -38,14 +43,26 @@ const SliderThumbs = styled.div`
     padding: 56px 41px;
     border-bottom: 5px solid #FAF5EA;
     cursor: pointer;
+
+    @media (max-width: 1496px) {
+      padding: 0;
+    }
   }
 `;
 
 const Slider = styled.div`
+  img.bg{
+    width: 100%;
+  }
+
   .content{
     padding: 20px 150px;
     position: relative;
     top: -269px;
+
+    @media (max-width: 1666px) {
+      padding: 0;
+    }
 
     h1{
       color: #FFFFFF;
@@ -120,18 +137,37 @@ const StyledArrows = styled.div`
     padding: 30px;
     background: #ffffff;
     cursor: pointer;
+    transition: .3s;
   }
 
   div:first-child{
     position: relative;
     left: -40px;
     top: 263px;
+
+    @media (max-width: 1640px) {
+      left: 0;
+      top: 0;
+    }
+
+    &:hover{
+      box-shadow: -4px 0px 4px #efefefa6;
+    }
   }
 
   div:last-child{
     position: relative;
     right: -824px;
     top: 263px;
+
+    @media (max-width: 1640px) {
+      left: 0;
+      top: 0;
+    }
+
+    &:hover{
+      box-shadow: 4px 0px 4px #efefefa6;
+    }
   }
 `;
 
@@ -148,6 +184,11 @@ const StyledNavs = styled.div`
     background: #E7E9E9;
     margin: 0 10px;
     cursor: pointer;
+    transition: .3s;
+
+    &:hover{
+      background: gray;
+    }
   }
 `;
 
@@ -185,7 +226,7 @@ const Carrousel = () => {
         >
           <Slider>
              <div className="header">
-               <img src={Bg} alt="Dar project" />
+               <img className="bg" src={Bg} alt="Dar project" />
                <div className="content">
                  <h1>
                    NEXT HOUSE

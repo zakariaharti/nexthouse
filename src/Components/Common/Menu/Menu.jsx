@@ -80,7 +80,7 @@ const MenuWrapper = styled.div`
    right: 0;
    left: 0;
    background-color: #F6FBFB;
-   z-index: 9999;
+   z-index: 999999;
    transition: all .3s;
 
    transform: translateY(${props => props.isOpen ? '-1440px' : '0'});
