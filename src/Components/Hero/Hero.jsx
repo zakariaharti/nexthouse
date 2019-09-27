@@ -111,6 +111,10 @@ const StyledContent = styled.div`
     @media (max-width: 696px){
       font-size: 65px;
     }
+
+    @media (max-width: 492px) {
+      font-size: 50px;
+    }
   }
 
   .p-title{
@@ -124,11 +128,19 @@ const StyledContent = styled.div`
     @media (max-width: 696px){
       font-size: 26px;
     }
+
+    @media (max-width: 492px) {
+      font-size: 25px;
+    }
   }
 
   .upper{
     background-color: #ECD493;
     padding: 10px 31px 10px 19px;
+
+    @media (max-width: 492px) {
+      padding: 0px 31px 1px 19px;
+    }
 
     p{
       color: #243842;
@@ -141,6 +153,10 @@ const StyledContent = styled.div`
       @media (max-width: 696px){
         font-size: 26px;
       }
+
+      @media (max-width: 492px) {
+        font-size: 20px;
+      }
     }
 
     h1{
@@ -152,6 +168,10 @@ const StyledContent = styled.div`
 
       @media (max-width: 696px){
         font-size: 55px;
+      }
+
+      @media (max-width: 492px) {
+        font-size: 42px;
       }
 
       span{
@@ -181,6 +201,10 @@ const StyledContent = styled.div`
       @media (max-width: 696px){
         font-size: 27px;
       }
+
+      @media (max-width: 492px) {
+        font-size: 24px;
+      }
     }
 
     a{
@@ -206,7 +230,11 @@ const StyledContent = styled.div`
     width: 453px;
 
     @media (max-width: 696px){
-        width: 411px;
+      width: 411px;
+    }
+
+    @media (max-width: 492px) {
+      width: 318px;
     }
   }
 `;
@@ -251,6 +279,11 @@ const SearchWrapper = styled.div`
     margin: 0 20px;
   }
 
+  @media (max-width: 492px) {
+    min-width: 0;
+    top: -338px;
+  }
+
   p{
     color: #102F2C;
     font-family: 'Kanit Bold';
@@ -292,6 +325,10 @@ const SearchWrapper = styled.div`
     @media (max-width: 1385px) {
       margin: 0 15px;
     }
+
+    @media (max-width: 492px) {
+      display: block;
+    }
   }
 
 
@@ -324,6 +361,10 @@ const SearchWrapper = styled.div`
 
     @media (max-width: 1352px) {
       margin-top: 14px;
+    }
+
+    @media (max-width: 492px) {
+      display: block;
     }
 
     &:hover{
@@ -432,6 +473,10 @@ const StyledArticle = styled.div`
     padding: 150px 35px;
   }
 
+  @media (max-width: 492px) {
+    padding-bottom: 354px;
+  }
+
   .col{
     padding: 0 50px;
     position: relative;
@@ -535,6 +580,12 @@ const StyledArticle = styled.div`
          width: 418px;
          top: -307px;
          left: 60px;
+      }
+
+      @media (max-width: 492px) {
+        width: 294px;
+        top: -197px;
+        left: 43px;
       }
     }
   }

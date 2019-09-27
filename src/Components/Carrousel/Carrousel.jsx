@@ -18,6 +18,14 @@ const CarrouselWrapper = styled.div`
   margin-top: -198px;
   padding: 0 362px;
 
+  @media (max-width: 1096px) {
+    padding: 0 155px;
+  }
+
+  @media (max-width: 858px) {
+    padding: 0 50px;
+  }
+
   h1.title{
     color: #102F2C;
     font-family: 'Kanit Bold';
@@ -31,6 +39,10 @@ const CarrouselWrapper = styled.div`
       padding: 0;
       margin-bottom: 60px;
     }
+
+    @media (max-width: 800px) {
+      padding: 0 69px;
+    }
   }
 `;
 
@@ -38,6 +50,10 @@ const SliderThumbs = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px 0;
+
+  @media (max-width: 786px) {
+    display: none;
+  }
 
   span{
     padding: 56px 41px;
@@ -51,8 +67,13 @@ const SliderThumbs = styled.div`
 `;
 
 const Slider = styled.div`
+
   img.bg{
     width: 100%;
+
+    @media (max-width: 858px) {
+      width: auto;
+    }
   }
 
   .content{
@@ -72,6 +93,10 @@ const Slider = styled.div`
       line-height: 46px;
       text-align: center;
       margin-bottom: 16px;
+
+      @media (max-width: 492px) {
+        font-size: 44px;
+      }
     }
 
     h3{
@@ -82,6 +107,10 @@ const Slider = styled.div`
         line-height: 46px;
         text-align: center;
         margin-bottom: 20px;
+
+        @media (max-width: 492px) {
+          font-size: 29px;
+        }
     }
 
     p{
@@ -92,12 +121,21 @@ const Slider = styled.div`
       text-align: center;
       padding: 0 141px;
 
+      @media (max-width: 492px) {
+        font-size: 17px;
+        padding: 0 56px;
+      }
+
       span{
         color: #F1DB9E;
         font-family: 'Kanit ExtraBold';
         font-size: 25px;
         font-weight: 800;
         line-height: 29px;
+
+        @media (max-width: 492px) {
+          font-size: 25px;
+        }
       }
     }
   }
@@ -114,6 +152,16 @@ const Slider = styled.div`
       display: flex;
       padding: 48px 45px;
       align-items: center;
+
+      @media (max-width: 866px) {
+        padding: 48px 11px;
+      }
+
+      @media (max-width: 492px) {
+        display: block;
+        text-align: center;
+        padding: 27px 11px;
+      }
 
       p{
         color: #243842;

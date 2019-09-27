@@ -40,6 +40,26 @@ const StyledWrapper = styled.div`
       padding: 0 625px;
       margin-top: 23px;
       margin-bottom: 73px;
+
+      @media (max-width: 1578px){
+        padding: 0 568px;
+      }
+
+      @media (max-width: 1439px){
+        padding: 0;
+      }
+    }
+  }
+
+  .img{
+    width: 100%;
+
+    @media (max-width: 1318px){
+      width: auto;
+    }
+
+    @media (max-width: 492px){
+      width: 100%;
     }
   }
 `;
@@ -48,6 +68,16 @@ const StyledColsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 102px;
+  max-height: 1600px;
+
+  @media (max-width: 1318px){
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 492px){
+    padding: 0 20px;
+  }
 
   a{
     cursor: pointer;
@@ -63,8 +93,28 @@ const StyledColsWrapper = styled.div`
     transition: .5s;
   }
 
+  .coll{
+    margin-right: 30px;
+    mergin-left: 30px;
+
+    @media (max-width: 492px){
+      margin-right: 0px;
+    }
+  }
+
+  .coll:last-of-type{
+    @media (max-width: 1318px) {
+      position: relative;
+      top: -196px;
+    }
+  }
+
   .col{
     margin-top: 84px;
+
+    @media (max-width: 492px){
+      margin-top: 0px;
+    }
   }
 
   .content{
@@ -77,6 +127,10 @@ const StyledColsWrapper = styled.div`
       font-size: 40px;
       line-height: 60px;
       text-shadow: 0 0 20px 0 rgba(36,56,66,0.5);
+
+      @media (max-width: 492px){
+        font-size: 37px;
+      }
     }
 
     h1{
@@ -86,6 +140,10 @@ const StyledColsWrapper = styled.div`
       font-weight: 800;
       line-height: 40px;
       text-shadow: 0 0 5px 0 rgba(16,47,44,0.2);
+
+      @media (max-width: 492px){
+        font-size: 33px;
+      }
     }
 
     span{
@@ -99,6 +157,14 @@ const StyledColsWrapper = styled.div`
     .text{
       padding-left: 161px;
       padding-top: 24px;
+
+      @media (max-width: 1439px){
+        padding-left: 76px;
+      }
+
+      @media (max-width: 492px){
+        padding-left: 23px;
+      }
     }
   }
 `;
@@ -119,6 +185,35 @@ const StyledPresseWrapper = styled.div`
     display: flex;
     justify-content: center;
     padding: 70px 152px;
+
+    @media (max-width: 1382px) {
+      padding: 70px 2px;
+    }
+
+    @media (max-width: 1206px) {
+      flex-direction: column;
+      padding: 70px 333px;
+    }
+
+    @media (max-width: 1103px) {
+      padding: 70px 290px;
+    }
+
+    @media (max-width: 986px) {
+      padding: 70px 229px;
+    }
+
+    @media (max-width: 864px) {
+      padding: 70px 177px;
+    }
+
+    @media (max-width: 791px) {
+      padding: 70px 77px;
+    }
+
+    @media (max-width: 791px) {
+      padding: 70px 7px;
+    }
 
     .col-2{
       img.logo{
@@ -149,6 +244,10 @@ const StyledPresseWrapper = styled.div`
       cursor: pointer;
       transition: .5s;
 
+      @media (max-width: 1206px) {
+        margin-bottom: 20px;
+      }
+
       &:hover{
         box-shadow: 0px 4px 10px #b5b5b55c;
         background: #cc9d3a26;
@@ -160,6 +259,10 @@ const StyledPresseWrapper = styled.div`
         float: right;
         width: 18px;
         right: -21px;
+
+        @media (max-width: 1206px) {
+          bottom: -50px;
+        }
       }
 
       h1{
@@ -209,15 +312,31 @@ const StyledBottom = styled.div`
     width: 500px;
     background-color: #C9982E;
     margin: auto;
+
+    @media (max-width: 713px){
+      width: 384px;
+    }
   }
 
   img.pattern{
     position: absolute;
     left: 0;
+
+    @media (max-width: 1069px){
+      display: none;
+    }
   }
 
   .content{
     margin: 80px 0;
+
+    @media (max-width: 1238px){
+      padding: 0 216px;
+    }
+
+    @media (max-width: 1069px){
+      padding: 0 58px;
+    }
 
     h1{
       color: #243842;
@@ -336,7 +455,7 @@ const SectionTwo = () => {
          <h1>À chacun son style de vie</h1>
        </div>
        <StyledColsWrapper>
-          <div className="col">
+          <div className="col coll">
             <a>
               <img className="img" src={Appart} alt='Appartement' />
               <div className="content">
@@ -350,7 +469,7 @@ const SectionTwo = () => {
               </div>
             </a>
           </div>
-          <div>
+          <div className="coll">
             <a>
               <img className="img" src={Villa} alt='Villa' />
               <div className="content">
