@@ -43,6 +43,11 @@ const CarrouselWrapper = styled.div`
     @media (max-width: 800px) {
       padding: 0 69px;
     }
+
+    @media (max-width: 375px) {
+      padding: 0px;
+      font-size: 30px;
+    }
   }
 `;
 

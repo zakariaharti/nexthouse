@@ -22,6 +22,10 @@ const StyledWrapper = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
 
+  @media (max-width: 375px) {
+    padding: 0;
+  }
+
   @media (max-width: 852px){
     flex-direction: column;
     align-items: center;
@@ -115,6 +119,10 @@ const StyledContent = styled.div`
     @media (max-width: 492px) {
       font-size: 50px;
     }
+
+    @media (max-width: 375px) {
+      font-size: 39px;
+    }
   }
 
   .p-title{
@@ -131,6 +139,10 @@ const StyledContent = styled.div`
 
     @media (max-width: 492px) {
       font-size: 25px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 23px;
     }
   }
 
@@ -157,6 +169,10 @@ const StyledContent = styled.div`
       @media (max-width: 492px) {
         font-size: 20px;
       }
+
+      @media (max-width: 375px) {
+        font-size: 17px;
+      }
     }
 
     h1{
@@ -174,6 +190,10 @@ const StyledContent = styled.div`
         font-size: 42px;
       }
 
+      @media (max-width: 375px) {
+        font-size: 35px;
+      }
+
       span{
         color: #243842;
         font-family: 'Kanit Medium';
@@ -183,6 +203,10 @@ const StyledContent = styled.div`
 
         @media (max-width: 696px){
           font-size: 24px;
+        }
+
+        @media (max-width: 375px) {
+          font-size: 20px;
         }
       }
     }
@@ -205,6 +229,10 @@ const StyledContent = styled.div`
       @media (max-width: 492px) {
         font-size: 24px;
       }
+
+      @media (max-width: 375px) {
+        font-size: 22px;
+      }
     }
 
     a{
@@ -221,6 +249,12 @@ const StyledContent = styled.div`
 
       &:hover{
         opacity: 1;
+      }
+
+      @media (max-width: 375px) {
+        padding: 18px;
+        right: 0px;
+        top: -1px;
       }
     }
   }
@@ -477,6 +511,10 @@ const StyledArticle = styled.div`
     padding-bottom: 354px;
   }
 
+  @media (max-width: 375px) {
+    padding-bottom: 440px;
+  }
+
   .col{
     padding: 0 50px;
     position: relative;
@@ -505,6 +543,10 @@ const StyledArticle = styled.div`
       font-size: 48px;
       font-weight: bold;
       line-height: 72px;
+
+      @media (max-width: 375px) {
+        font-size: 38px;
+      }
     }
 
     h3{
@@ -515,6 +557,10 @@ const StyledArticle = styled.div`
       line-height: 32px;
       margin-top: 10px;
       margin-bottom: 30px;
+
+      @media (max-width: 375px) {
+        font-size: 18px;
+      }
     }
 
     p{
@@ -524,6 +570,10 @@ const StyledArticle = styled.div`
       line-height: 28px;
       text-align: justify;
       margin-bottom: 60px;
+
+      @media (max-width: 375px) {
+        font-size: 20px;
+      }
     }
 
     a{
@@ -537,6 +587,10 @@ const StyledArticle = styled.div`
       cursor: pointer;
       transition: .3s;
       opacity: .7;
+
+      @media (max-width: 375px) {
+        font-size: 9px;
+      }
 
       &:hover{
         opacity: 1;
@@ -586,6 +640,10 @@ const StyledArticle = styled.div`
         width: 294px;
         top: -197px;
         left: 43px;
+      }
+
+      @media (max-width: 375px) {
+        width: 199px;
       }
     }
   }

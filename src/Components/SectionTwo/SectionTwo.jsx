@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import * as L from 'leaflet/dist/leaflet';
 
 import Villa from '../../assets/img/image-villa.jpg';
 import Appart from '../../assets/img/image-appart.jpg';
@@ -28,6 +29,10 @@ const StyledWrapper = styled.div`
       font-weight: 300;
       line-height: 60px;
       text-align: center;
+
+      @media (max-width: 607px){
+        font-size: 28px;
+      }
     }
 
     h1{
@@ -48,6 +53,10 @@ const StyledWrapper = styled.div`
       @media (max-width: 1439px){
         padding: 0;
       }
+
+      @media (max-width: 607px){
+        font-size: 32px;
+      }
     }
   }
 
@@ -58,8 +67,12 @@ const StyledWrapper = styled.div`
       width: auto;
     }
 
-    @media (max-width: 492px){
+    @media (max-width: 781px){
       width: 100%;
+    }
+
+    @media (max-width: 607px) {
+      max-width: 373px;
     }
   }
 `;
@@ -128,8 +141,12 @@ const StyledColsWrapper = styled.div`
       line-height: 60px;
       text-shadow: 0 0 20px 0 rgba(36,56,66,0.5);
 
-      @media (max-width: 492px){
-        font-size: 37px;
+      @media (max-width: 703px){
+        font-size: 31px;
+      }
+
+      @media (max-width: 607px) {
+        font-size: 28px;
       }
     }
 
@@ -141,8 +158,8 @@ const StyledColsWrapper = styled.div`
       line-height: 40px;
       text-shadow: 0 0 5px 0 rgba(16,47,44,0.2);
 
-      @media (max-width: 492px){
-        font-size: 33px;
+      @media (max-width: 607px) {
+        font-size: 24px;
       }
     }
 
@@ -152,6 +169,10 @@ const StyledColsWrapper = styled.div`
       background: #ffffff;
       position: relative;
       top: -57px;
+
+      @media (max-width: 607px) {
+        top: -18px;
+      }
     }
 
     .text{
@@ -164,6 +185,10 @@ const StyledColsWrapper = styled.div`
 
       @media (max-width: 492px){
         padding-left: 23px;
+      }
+
+      @media (max-width: 607px) {
+        padding-top: 0px;
       }
     }
   }
@@ -295,6 +320,10 @@ const StyledPresseWrapper = styled.div`
     line-height: 24px;
     text-align: right;
 
+    @media (max-width: 375px) {
+      font-size: 12px;
+    }
+
     img{
       vertical-align: middle;
       margin-left: 60px;
@@ -315,6 +344,10 @@ const StyledBottom = styled.div`
 
     @media (max-width: 713px){
       width: 384px;
+    }
+
+    @media (max-width: 375px) {
+      width: 246px;
     }
   }
 
@@ -345,6 +378,10 @@ const StyledBottom = styled.div`
       font-weight: 800;
       line-height: 68px;
       text-align: center;
+
+      @media (max-width: 375px) {
+        font-size: 29px;
+      }
     }
 
     p{
@@ -367,9 +404,17 @@ const StyledBottom = styled.div`
       background-color: #ECD493;
       cursor: pointer;
 
+      @media (max-width: 375px) {
+        font-size: 9px;
+      }
+
       img{
         vertical-align: middle;
         margin-left: 45px;
+
+        @media (max-width: 375px) {
+            margin-left: 8px;
+        }
       }
     }
   }
@@ -379,14 +424,19 @@ const StyledMap = styled.div`
   background: #E7F3F2;
   padding: 30px 240px;
   text-align: center;
-  height: 500px;
+  height: 650px;
 `;
 
 const StyledFooter = styled.div`
   width: 100%;
   height: 454px;
   background: #14262f;
-  padding: 39px 411px;
+  padding: 39px 11px;
+
+  @media (max-width: 923px){
+    padding: 49px 41px;
+    height: auto;
+  }
 
   .header-logo{
     margin: auto;
@@ -406,6 +456,7 @@ const StyledFooter = styled.div`
       display: flex;
       justify-content: center;
       margin: 50px 0;
+      flex-wrap: wrap;
 
       a{
         opacity: 0.8;
@@ -447,6 +498,37 @@ const StyledFooter = styled.div`
 `;
 
 const SectionTwo = () => {
+
+  const access = 'pk.eyJ1IjoiZ3JpbW1qb3c2IiwiYSI6ImNrMTY4NWVwZzA2OHYzbG1yNGl3Y2R5cnUifQ.PQj-RbQj5Wm_XZA1UgGnHg';
+
+  useEffect(() => {
+    let mymap = L.map('myMap').setView([33.589886, -7.603869], 14);
+
+    L.tileLayer(`https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=${access}`, {
+	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	    maxZoom: 30,
+	    id: 'mapbox.streets',
+	    accessToken: `${access}`
+    }).addTo(mymap);
+
+    let marker = L.marker([33.589886, -7.603869]).addTo(mymap);
+
+    let circle = L.circle([33.589886, -7.603869], {
+	     color: 'red',
+	     fillColor: '#f03',
+	     fillOpacity: 0.5,
+	     radius: 500
+    }).addTo(mymap);
+
+    marker.bindPopup(`
+       <h1 class="map-title">SIEGE AL AKARIA DEVELOPPEMENT</h1>
+       <p class="map-add">Route N° 23 Immeuble 24, Appt 3</p>
+       <p class="map-ema">contact@nexthouse.ma</p>
+       <p class="map-tel">+212 522 392 828</p>
+    `).openPopup();
+    circle.bindPopup("I am a circle.");
+  });
+
   return (
     <>
     <StyledWrapper>
@@ -526,7 +608,7 @@ const SectionTwo = () => {
        </StyledBottom>
     </StyledWrapper>
 
-    <StyledMap />
+    <StyledMap id="myMap" />
 
     <StyledFooter>
       <div className="header">
