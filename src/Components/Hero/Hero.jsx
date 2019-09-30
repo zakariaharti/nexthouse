@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 import Arrow from '../../assets/img/fleche.svg';
 import Bg from '../../assets/img/visuel-slide.jpg';
@@ -697,10 +698,10 @@ const Hero = () => {
         <img src={Casaanfa} alt="casa anfa" />
         <img className="arrow" src={ArrowRight} alt="arrow right icon" />
       </a>
-      <a>
+      <Link to="/project-zenata">
         <img src={Zenata} alt="casa anfa" />
         <img className="arrow" src={ArrowRight} alt="arrow right icon" />
-      </a>
+      </Link>
       <a>
         <img src={Dar} alt="casa anfa" />
         <img className="arrow" src={ArrowRight} alt="arrow right icon" />

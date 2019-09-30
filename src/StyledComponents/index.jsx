@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 import LogoImg from '../assets/img/logo-nexthouse.svg';
 
@@ -68,6 +69,7 @@ const StyledLogo = styled.nav`
 
 export const Logo = () => (
   <StyledLogo>
+    <Link to="/">
     <div className="logo">
       <img src={LogoImg} alt="next house logo" />
     </div>
@@ -78,5 +80,6 @@ export const Logo = () => (
         <div></div>
       </div>
     </div>
+    </Link>
   </StyledLogo>
 );

@@ -2,12 +2,14 @@ import React, {useState, useEffect} from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 import * as L from 'leaflet/dist/leaflet';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Navbar from './Components/Common/Navbar/Navbar';
 import Menu from './Components/Common/Menu/Menu';
 import Hero from './Components/Hero/Hero';
 import Carrousel from './Components/Carrousel/Carrousel';
 import SectionTwo from './Components/SectionTwo/SectionTwo';
+import PageProject from './Components/PageProject/PageProject';
 
 import KanitRegular from './assets/fonts/Kanit-Regular.ttf';
 import KanitMedium from './assets/fonts/Kanit-Medium.ttf';
@@ -90,24 +92,48 @@ function App() {
 
   return (
     <main id="nexthouse-grand-wrapper">
-      <GlobalStyle />
+      <Router>
+         <GlobalStyle />
 
-      <CSSTransition
-        in={isOpen}
-        timeout={300}
-        classNames="menu-anime"
-        unmountOnExit
-      >
-         <Menu />
-      </CSSTransition>
+         <Switch>
+           <Route path="/" exact>
+             <>
+                <CSSTransition
+                  in={isOpen}
+                  timeout={300}
+                  classNames="menu-anime"
+                  unmountOnExit
+                >
+                   <Menu />
+                </CSSTransition>
 
-      <Navbar isOpen={isOpen} onClick={() => setState(state => !state ? true : false)} />
+                 <Navbar isOpen={isOpen} onClick={() => setState(state => !state ? true : false)} />
 
-      <Hero />
+                 <Hero />
 
-      <Carrousel />
+                 <Carrousel />
 
-      <SectionTwo />
+                 <SectionTwo />
+              </>
+           </Route>
+
+           <Route path="/project-zenata">
+             <>
+               <CSSTransition
+                 in={isOpen}
+                 timeout={300}
+                 classNames="menu-anime"
+                 unmountOnExit
+               >
+                  <Menu />
+               </CSSTransition>
+
+               <Navbar isOpen={isOpen} onClick={() => setState(state => !state ? true : false)} />
+               <PageProject />
+             </>
+           </Route>
+         </Switch>
+      </Router>
     </main>
   );
 }
