@@ -501,7 +501,7 @@ const SectionTwo = () => {
 
   const access = 'pk.eyJ1IjoiZ3JpbW1qb3c2IiwiYSI6ImNrMTY4NWVwZzA2OHYzbG1yNGl3Y2R5cnUifQ.PQj-RbQj5Wm_XZA1UgGnHg';
 
-  useEffect(() => {
+  /*useEffect(() => {
     let mymap = L.map('myMap').setView([33.589886, -7.603869], 14);
 
     L.tileLayer(`https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=${access}`, {
@@ -527,7 +527,7 @@ const SectionTwo = () => {
        <p class="map-tel">+212 522 392 828</p>
     `).openPopup();
     circle.bindPopup("I am a circle.");
-  });
+  });*/
 
   return (
     <>
