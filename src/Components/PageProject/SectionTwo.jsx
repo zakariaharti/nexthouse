@@ -24,6 +24,18 @@ const StyledWrapper = styled.div`
   justify-content: centre;
   padding: 104px 153px;
 
+  @media (max-width: 867px){
+    padding: 104px 30px;
+  }
+
+  @media (max-width: 1488px){
+    flex-direction: column;
+  }
+
+  @media (max-width: 414px){
+    padding: 104px 0px;
+  }
+
   .col{
       margin: 0 35px;
   }
@@ -34,13 +46,28 @@ const StyledWrapper = styled.div`
       top: -120px;
       z-index: -14;
       right: -427px;
+
+      @media (max-width: 1488px){
+        top: 55px;
+        right: 220px;
+      }
+    }
+
+    img:first-child{
+      @media (max-width: 867px){
+        width: 100%;
+      }
     }
   }
 
   .col-2{
     padding: 0 60px;
     padding-left: 0;
-        margin-top: 68px;
+    margin-top: 68px;
+
+    @media (max-width: 1488px){
+      text-align: center;
+    }
   }
 
   h3{
@@ -66,10 +93,19 @@ const StyledWrapper = styled.div`
     font-family: 'Cabin';
     font-size: 18px;
     line-height: 28px;
+
+    @media (max-width: 1488px){
+      text-align: left;
+    }
   }
 
   nav{
     padding: 20px;
+
+    @media (max-width: 1488px){
+      text-align: left;
+    }
+
     p{
       	color: #243842;
         font-family: 'Cabin Medium';
@@ -100,6 +136,10 @@ const StyledGallery = styled.div`
   .cols{
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 508px){
+      flex-direction: column;
+    }
 
     .col{
       width: 100%;
@@ -141,6 +181,10 @@ const StyledGallery = styled.div`
     .col-2{
       margin: 0 2px;
       background-image: url(${Photo2});
+
+      @media (max-width: 508px){
+        margin: 0;
+      }
     }
 
     .col-3{
@@ -152,6 +196,10 @@ const StyledGallery = styled.div`
 const StyledBottom = styled.div`
   background-color: #EBF5F4;
   padding: 0px 0px 236px 0px;
+
+  @media (max-width: 867px){
+      padding: 158px 16px 252px 16px;
+  }
 
   h1{
     color: #243842;
@@ -175,6 +223,10 @@ const StyledBottom = styled.div`
     justify-content: center;
     margin: 47px 0;
 
+    @media (max-width: 974px) {
+      flex-direction: column;
+    }
+
     div:nth-child(2){
       margin-right: 35px;
       margin-left: 35px;
@@ -186,6 +238,11 @@ const StyledBottom = styled.div`
       background: #ffffff;
       transition: .3s;
       cursor: pointer;
+
+      @media (max-width: 974px) {
+        margin: 10px 35px;
+        flex-direction: column;
+      }
 
       &:hover{
         background-color: #F1DB9E;
@@ -206,12 +263,28 @@ const StyledBottom = styled.div`
   .img1{
     position: relative;
     top: 176px;
+
+    @media (max-width: 1059px) {
+      left: -123px;
+    }
+
+    @media (max-width: 867px){
+      display: none;
+    }
   }
 
   .img2{
     position: relative;
     float: right;
     top: -106px;
+
+    @media (max-width: 1059px) {
+      top: 0;
+    }
+
+    @media (max-width: 867px){
+      display: none;
+    }
   }
 `;
 

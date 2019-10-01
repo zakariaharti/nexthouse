@@ -232,6 +232,14 @@ const StyledContent = styled.div`
 const StyledArticle= styled.div`
   padding: 175px 347px;
 
+  @media (max-width: 1059px){
+    padding: 175px 47px;
+  }
+
+  @media (max-width: 414px){
+    padding: 175px 17px;
+  }
+
   h1 {
     color: #243842;
     font-family: 'Kanit Bold';
@@ -240,6 +248,10 @@ const StyledArticle= styled.div`
     line-height: 60px;
     text-align: center;
     margin-bottom: 35px;
+
+    @media (max-width: 414px){
+      font-size: 33px;
+    }
   }
 
   p{
@@ -271,6 +283,10 @@ const StyledArticle= styled.div`
     div.option{
       text-align: center;
       padding: 1px 50px;
+
+      @media (max-width: 537px){
+        padding: 1px 10px;
+      }
     }
 
     div:not(:last-of-type){
@@ -291,6 +307,14 @@ const StyledSlider = styled.div`
   background-color: #EBF5F4;
   padding: 70px 152px;
 
+  @media (max-width: 1059px) {
+    padding: 70px 69px;
+  }
+
+  @media (max-width: 638px){
+    padding: 70px 38px;
+  }
+
   p{
     color: #102F2C;
     font-family: 'Kanit Light';
@@ -299,6 +323,10 @@ const StyledSlider = styled.div`
     line-height: 38px;
     text-align: center;
     margin-bottom: 20px;
+
+    @media (max-width: 414px){
+      font-size: 20px;
+    }
   }
 
   h1{
@@ -308,6 +336,10 @@ const StyledSlider = styled.div`
     font-weight: 800;
     line-height: 50px;
     text-align: center;
+
+    @media (max-width: 414px){
+      font-size: 30px;
+    }
   }
 
   .navs{
@@ -335,6 +367,22 @@ const StyledSlider = styled.div`
       cursor: pointer;
       padding: 36px 62px;
       margin: 34px;
+
+      @media (max-width: 851px){
+        padding: 14px 51px;
+      }
+
+      @media (max-width: 638px){
+        padding: 12px 42px;
+      }
+
+      @media (max-width: 537px){
+        margin: 0;
+      }
+
+      @media (max-width: 414px){
+        padding: 12px 33px;
+      }
 
       p{
         color: #102F2C;
@@ -365,19 +413,35 @@ const StyledSlider = styled.div`
       justify-content: space-between;
       position: relative;
 
+      @media (max-width: 851px){
+        top: -267px;
+      }
+
       span{
         padding: 32px;
         background: #ffffff;
         cursor: pointer;
         position: relative;
+
+        @media (max-width: 851px){
+          padding: 24px;
+        }
       }
 
       span:first-child{
         left: -40px;
+
+        @media (max-width: 638px){
+          left: 0;
+        }
       }
 
       span:last-child{
         right: -40px;
+
+        @media (max-width: 638px){
+          right: 0;
+        }
       }
     }
   }
@@ -419,7 +483,7 @@ const Hero = () => {
            </div>
            <div className="lower">
              <p>Livraison courant 2022</p>
-             
+
            </div>
           </div>
         </StyledContent>
