@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 import * as L from 'leaflet/dist/leaflet';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 import Navbar from './Components/Common/Navbar/Navbar';
 import Menu from './Components/Common/Menu/Menu';
@@ -92,7 +92,7 @@ function App() {
 
   return (
     <main id="nexthouse-grand-wrapper">
-      <Router>
+      <HashRouter>
          <GlobalStyle />
 
          <Switch>
@@ -133,7 +133,7 @@ function App() {
              </>
            </Route>
          </Switch>
-      </Router>
+      </HashRouter>
     </main>
   );
 }
