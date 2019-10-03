@@ -104,7 +104,7 @@ function App() {
                   classNames="menu-anime"
                   unmountOnExit
                 >
-                   <Menu />
+                   <Menu onClose={() => setState(false)} />
                 </CSSTransition>
 
                  <Navbar isOpen={isOpen} onClick={() => setState(state => !state ? true : false)} />

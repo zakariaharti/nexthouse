@@ -83,7 +83,7 @@ const MenuWrapper = styled.div`
    z-index: 999999;
    transition: all .3s;
 
-   transform: translateY(${props => props.isOpen ? '-1440px' : '0'});
+   transform: translateY(${props => props.isOpen ? '-1440px' : '0px'});
 
    .divider{
      height: 4px;
@@ -261,7 +261,7 @@ const ProjectsWrapper = styled.div`
   }
 `;
 
-const Menu = () =>  {
+const Menu = (props) =>  {
 
   const [isOpen, setState] = useState(false);
 
@@ -271,7 +271,7 @@ const Menu = () =>  {
 
         <MainCol>
           <div className="header">
-            <div className="close-icon" onClick={() => setState(true)}>
+            <div className="close-icon" onClick={props.onClose}>
               <img src={CloseIcon} alt="close icon" />
             </div>
 
