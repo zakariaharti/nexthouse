@@ -1,6 +1,10 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import * as L from 'leaflet/dist/leaflet';
+import * as ol from 'ol';
+import 'ol/ol.css';
+import TileLayer from 'ol/layer/Tile';
+import * as olProj from 'ol/proj';
+import OSM from 'ol/source/OSM';
 
 import Tiret from '../../assets/img/tiret-liste.svg';
 import Pattern from '../../assets/img/pattern.svg';
@@ -290,9 +294,8 @@ const StyledBottom = styled.div`
 
 const StyledMap = styled.div`
   background: #E7F3F2;
-  padding: 30px 240px;
-  text-align: center;
   height: 650px;
+  width: 100%;
 `;
 
 const StyledFooter = styled.div`
@@ -370,31 +373,18 @@ const SectionTwo = () => {
   const access = 'pk.eyJ1IjoiZ3JpbW1qb3c2IiwiYSI6ImNrMTY4NWVwZzA2OHYzbG1yNGl3Y2R5cnUifQ.PQj-RbQj5Wm_XZA1UgGnHg';
 
   useEffect(() => {
-    let mymap = L.map('myMap').setView([33.589886, -7.603869], 14);
-
-    L.tileLayer(`https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=${access}`, {
-	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-	    maxZoom: 30,
-	    id: 'mapbox.streets',
-	    accessToken: `${access}`
-    }).addTo(mymap);
-
-    let marker = L.marker([33.589886, -7.603869]).addTo(mymap);
-
-    let circle = L.circle([33.589886, -7.603869], {
-	     color: 'red',
-	     fillColor: '#f03',
-	     fillOpacity: 0.5,
-	     radius: 500
-    }).addTo(mymap);
-
-    marker.bindPopup(`
-       <h1 class="map-title">SIEGE AL AKARIA DEVELOPPEMENT</h1>
-       <p class="map-add">Route N° 23 Immeuble 24, Appt 3</p>
-       <p class="map-ema">contact@nexthouse.ma</p>
-       <p class="map-tel">+212 522 392 828</p>
-    `).openPopup();
-    circle.bindPopup("I am a circle.");
+    let map = new ol.Map({
+        target: 'myMap',
+        layers: [
+          new TileLayer({
+            source: new OSM()
+          })
+        ],
+        view: new ol.View({
+          center: olProj.fromLonLat([37.41, 8.82]),
+          zoom: 4
+        })
+    });
   });
 
   return (
